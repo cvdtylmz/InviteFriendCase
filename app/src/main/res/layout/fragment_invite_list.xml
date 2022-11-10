@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:background="@drawable/bg_gradient_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_header_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/ib_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="128dp"
+            android:layout_height="32dp"
+            android:src="@drawable/logo"
+            app:layout_constraintBottom_toBottomOf="@id/ib_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ib_back" />
+
+        <TextView
+            android:id="@+id/txt_total_earned_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="Total Earned"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ib_back" />
+
+        <TextView
+            android:id="@+id/txt_total_earn_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="@id/txt_total_earned_title"
+            app:layout_constraintTop_toBottomOf="@id/txt_total_earned_title"
+            tools:text="330 €" />
+
+        <TextView
+            android:id="@+id/txt_claim_earned"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="4dp"
+            android:text="@string/claim_earned"
+            android:textColor="@color/white"
+            app:drawableStartCompat="@drawable/ic_sack"
+            app:drawableTint="@color/white"
+            app:layout_constraintStart_toStartOf="@id/txt_total_earn_desc"
+            app:layout_constraintTop_toBottomOf="@id/txt_total_earn_desc" />
+
+        <TextView
+            android:id="@+id/txt_potential_earned_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Total Earned"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ib_back" />
+
+        <TextView
+            android:id="@+id/txt_potential_earn_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            app:layout_constraintEnd_toEndOf="@id/txt_potential_earned_title"
+            app:layout_constraintTop_toBottomOf="@id/txt_potential_earned_title"
+            tools:text="270 €" />
+
+        <TextView
+            android:id="@+id/txt_maximum_earns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="4dp"
+            android:text="Maximum earnings 600€"
+            android:textColor="@color/white"
+            app:drawableStartCompat="@drawable/ic_sack"
+            app:drawableTint="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/txt_potential_earn_desc"
+            app:layout_constraintTop_toBottomOf="@id/txt_potential_earn_desc" />
+
+        <TextView
+            android:id="@+id/txt_invited_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Invited"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/txt_claim_earned"
+            app:layout_constraintTop_toBottomOf="@id/txt_claim_earned" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_invited_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:elevation="8dp"
+        android:nestedScrollingEnabled="true"
+        app:layout_constraintBottom_toTopOf="@id/layout_agreement_terms"
+        app:layout_constraintTop_toBottomOf="@id/cl_header_area"
+        tools:itemCount="6"
+        tools:listitem="@layout/row_invited_user" />
+
+    <com.cevdetyilmaz.invitefriendcase.view.CustomAgreementView
+        android:id="@+id/layout_agreement_terms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        app:agreement_icon="@drawable/ic_terms"
+        app:agreement_text="@string/terms_and_conditions"
+        app:layout_constraintBottom_toTopOf="@id/btn_invite"
+        app:layout_constraintEnd_toStartOf="@id/layout_how_to_works"
+        app:layout_constraintStart_toStartOf="@id/rv_invited_list"
+        app:layout_constraintTop_toBottomOf="@id/rv_invited_list" />
+
+    <com.cevdetyilmaz.invitefriendcase.view.CustomAgreementView
+        android:id="@+id/layout_how_to_works"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:agreement_icon="@drawable/ic_baseline_help_outline_24"
+        app:agreement_text="@string/how_to_works"
+        app:layout_constraintBottom_toBottomOf="@id/layout_agreement_terms"
+        app:layout_constraintEnd_toEndOf="@id/rv_invited_list"
+        app:layout_constraintStart_toEndOf="@id/layout_agreement_terms"
+        app:layout_constraintTop_toTopOf="@id/layout_agreement_terms" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_invite"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/bg_orange_gradient_and_ripple"
+        android:text="@string/invite_friend"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

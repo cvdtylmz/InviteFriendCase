@@ -1,0 +1,89 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+apply from: '../dependency_configs.gradle'
+
+android {
+    compileSdk 32
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    defaultConfig {
+        applicationId "com.cevdetyilmaz.invitefriendcase"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "String", "APP_BASE_URL", "\"https://b5jabr5esqfql36a4vdwqi5u740tnjei.lambda-url.eu-central-1.on.aws/\""
+            minifyEnabled false
+            debuggable true
+        }
+        release {
+            buildConfigField "String", "APP_BASE_URL", "\"https://b5jabr5esqfql36a4vdwqi5u740tnjei.lambda-url.eu-central-1.on.aws\""
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation libraries.kotlin
+    implementation libraries.coroutinesCore
+
+    implementation libraries.androidCore
+    implementation libraries.appCompat
+    implementation libraries.material
+    testImplementation testLibraries.junit
+    androidTestImplementation testLibraries.androidxTestJunit
+    androidTestImplementation testLibraries.espresso
+
+    implementation libraries.retrofit
+    implementation libraries.retrofitGsonConverter
+    implementation libraries.okhttp
+    implementation libraries.loggingInterceptor
+
+    implementation libraries.hilt
+    kapt libraries.hiltCompiler
+
+    implementation libraries.fragmentKtx
+    implementation libraries.constraintLayout
+    implementation libraries.appCompat
+    implementation libraries.material
+    implementation libraries.navigationFragmentKtx
+    implementation libraries.navigationUIKtx
+    implementation libraries.lifecycleKtx
+
+    implementation libraries.lifecycleViewModel
+    implementation libraries.lifecycleViewModelKtx
+    implementation libraries.lifecycleCommon
+    implementation libraries.lifecycleExtensions
+
+    implementation libraries.glide
+    kapt libraries.glideCompiler
+
+    testImplementation testLibraries.mockk
+    testImplementation testLibraries.coroutines
+    testImplementation testLibraries.espresso
+
+}

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">InviteFriendCase</string>
+    <string name="claim_earned"><u>You can claim!</u></string>
+    <string name="terms_and_conditions"><u>Terms &#38; Conditions</u></string>
+    <string name="how_to_works"><u>How To Works?</u></string>
+    <string name="invite_friend">Invite</string>
+</resources>

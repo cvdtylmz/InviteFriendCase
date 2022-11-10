@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="16dp"
+    app:cardPreventCornerOverlap="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="16dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ic_invited_user"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:padding="4dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/circleImageView"
+            app:strokeColor="@color/gray_light"
+            app:strokeWidth="2dp" />
+
+        <TextView
+            android:id="@+id/txt_user_full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginVertical="4dp"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="start"
+            android:maxLines="1"
+            android:text="Joe Doe"
+            android:textColor="@color/black_title"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/txt_invite_date"
+            app:layout_constraintStart_toStartOf="@id/txt_invite_date"
+            app:layout_constraintTop_toTopOf="@id/ic_invited_user" />
+
+        <TextView
+            android:id="@+id/txt_invite_date"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxLines="1"
+            android:text="10 November 2022 asdhgasdhaasdfads"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/ic_invited_user"
+            app:layout_constraintEnd_toStartOf="@id/txt_benefit"
+            app:layout_constraintStart_toEndOf="@id/ic_invited_user"
+            app:layout_constraintTop_toBottomOf="@id/txt_user_full_name" />
+
+        <TextView
+            android:id="@+id/txt_benefit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="+300 €"
+            android:textColor="@color/orange"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/ic_navigate_detail"
+            app:layout_constraintEnd_toStartOf="@id/ic_navigate_detail"
+            app:layout_constraintStart_toEndOf="@id/txt_invite_date"
+            app:layout_constraintTop_toTopOf="@id/ic_navigate_detail"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/ic_navigate_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+            app:layout_constraintBottom_toBottomOf="@id/ic_invited_user"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txt_benefit"
+            app:layout_constraintTop_toTopOf="@id/ic_invited_user" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
