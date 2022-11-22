@@ -28,7 +28,6 @@ class InviteListFragment : BaseFragment<InviteListViewModel>(R.layout.fragment_i
         super.observeViewModel(viewModel)
         viewLifecycleOwner.lifecycleScope.launchWhenCreated {
             viewModel.launchResult.collectLatest {
-                binding.pbLoading.isVisible = it is InviteListEvent.Loading
                 when (it) {
                     is InviteListEvent.DataLoaded -> {
                         binding.pbLoading.visibility = View.GONE
@@ -39,6 +38,7 @@ class InviteListFragment : BaseFragment<InviteListViewModel>(R.layout.fragment_i
                         Toast.makeText(context, it.error, Toast.LENGTH_LONG).show()
                     }
                     InviteListEvent.Loading -> binding.pbLoading.visibility = View.VISIBLE
+                    InviteListEvent.Idle -> Unit
                 }
             }
         }

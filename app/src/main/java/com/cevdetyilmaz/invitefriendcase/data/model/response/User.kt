@@ -5,5 +5,6 @@ data class User(
     val lastName: String?,
     val isEarned: Boolean?,
     val maximumEarnAmount: Int?,
-    val totalEarned: Int?
+    val totalEarned: Int?,
+    val date: Long?
 )

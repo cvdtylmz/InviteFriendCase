@@ -27,6 +27,7 @@ class InviteListViewModel @Inject constructor(private val getInviteListUseCase: 
             when (response) {
                 is Resource.Success -> _result.value = InviteListEvent.DataLoaded(response.data)
                 is Resource.Failure -> _result.value = InviteListEvent.Error(response.error)
+                Resource.Loading -> Unit
             }
         }
     }

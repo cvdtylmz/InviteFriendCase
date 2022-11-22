@@ -16,7 +16,8 @@
         <entry key="app/src/main/res/drawable/ic_sack.xml" value="0.1815" />
         <entry key="app/src/main/res/drawable/ic_terms.xml" value="0.1815" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.32135416666666666" />
-        <entry key="app/src/main/res/layout/fragment_invite_list.xml" value="0.2697769165039063" />
+        <entry key="app/src/main/res/layout/fragment_invite_list.xml" value="0.6853946211326182" />
+        <entry key="app/src/main/res/layout/fragment_invite_nested_list.xml" value="0.2629328772979906" />
         <entry key="app/src/main/res/layout/layout_aggrement_box.xml" value="0.3203125" />
         <entry key="app/src/main/res/layout/layout_agreement_box.xml" value="0.3425384521484375" />
         <entry key="app/src/main/res/layout/row_invite_user.xml" value="0.3356431071398451" />

@@ -17,4 +17,7 @@ object Constants {
         const val GRAY = "#505d66"
         const val ORANGE = "#f04718"
     }
+    object DATE {
+        const val CURRENT_DATE = "dd-MM-yyyy"
+    }
 }
